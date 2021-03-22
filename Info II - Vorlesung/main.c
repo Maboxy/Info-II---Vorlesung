@@ -7,10 +7,26 @@
 
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+void vergleich(){
+    int a = 0;
+    int b = 0;
     
-    // Test 
+    printf("Bitte geben Sie zwei Zahlen ein: \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    
+    if(a >= b){
+        
+        printf("%d ist größer als %d \n", a,b);
+    }
 }
+
+
+int main(int argc, const char * argv[]) {
+    
+    vergleich();
+    return 0;
+  
+}
+
+
