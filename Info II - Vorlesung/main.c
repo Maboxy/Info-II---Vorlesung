@@ -76,7 +76,34 @@ void ifKomplex(){
 }
 
 void switchCase(){
-        
+    char cSymbol;
+    printf("Bitte geben Sie einen Rechenoperator ein: \n");
+    scanf("%c", &cSymbol);
+    float fZahl_1 = 0;
+    float fZahl_2 = 0;
+    float ergebnis;
+    printf("Bitte geben Sie zwei Zahlen ein: \n");
+    scanf("%f", &fZahl_1);
+    scanf("%f", &fZahl_2);
+    switch(cSymbol){
+        case '+' :
+            ergebnis = fZahl_2 + fZahl_1;
+            printf("Ergebnis ist = %f /n", ergebnis);
+            break;
+        case '-':
+            ergebnis = fZahl_1 - fZahl_2;
+            printf("Ergebnis ist = %f /n", ergebnis);
+            break;
+        case '*':
+            ergebnis = fZahl_1 * fZahl_2;
+            printf("Ergebnis ist = %f /n", ergebnis);
+            break;
+        case '/':
+            ergebnis = fZahl_1 / fZahl_2;
+            printf("Ergebnis ist = %f /n", ergebnis);
+            break;
+            
+    }
 }
 
 int main(int argc, const char * argv[]) {
