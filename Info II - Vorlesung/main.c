@@ -51,12 +51,32 @@ void elseIf(){
     }
 }
 
+void ifKomplex(){
+    float fZahl_1, fZahl_2, fZahl_3;
+    
+    printf("Bitte geben Sie 3 Zahlen ein: \n");
+    scanf("%f", &fZahl_1);
+    scanf("%f", &fZahl_2);
+    scanf("%f", &fZahl_3);
+    
+    if(fZahl_1 > fZahl_2 && fZahl_1 > fZahl_3){
+        printf("%f ist die größte Zahl /n", fZahl_1);
+    }
+    if(fZahl_2 > fZahl_1 && fZahl_2 > fZahl_3){
+        printf("%f ist die größte Zahl \n", fZahl_2);
+    }
+    if(fZahl_3 > fZahl_1 && fZahl_3 > fZahl_2){
+        printf("%f ist die größte Zahl \n", fZahl_3);
+    }
+    
+}
 
 int main(int argc, const char * argv[]) {
     
     //vergleich();
     //ifVergleich();
-    elseIf();
+    //elseIf();
+    ifKomplex();
     
     
     return 0;
