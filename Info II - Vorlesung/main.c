@@ -8,18 +8,18 @@
 #include <stdio.h>
 
 void vergleich(){
-    int a = 0;
-    int b = 0;
-    
+    float a = 0;
+    float b = 0;
     printf("Bitte geben Sie zwei Zahlen ein: \n");
-    scanf("%d", &a);
-    scanf("%d", &b);
-    
+    scanf("%f", &a);
+    scanf("%f", &b);
     if(a >= b){
         
-        printf("%d ist größer als %d \n", a,b);
+        printf("%f ist größer als %f \n", a,b);
     }
 }
+
+
 
 
 int main(int argc, const char * argv[]) {
