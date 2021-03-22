@@ -19,12 +19,27 @@ void vergleich(){
     }
 }
 
-
+void ifVergleich(){
+    float zahl_1 = 0;
+    printf("Bitte geben Sie eine Zahle ein: \n");
+    scanf("%f", &zahl_1);
+   
+    
+    if(zahl_1 > 5){
+        
+        printf("%f ist größer als 5 \n", zahl_1);
+    }else{
+        printf("%f ist kleiner als 5 \n", zahl_1);
+    }
+    
+}
 
 
 int main(int argc, const char * argv[]) {
     
-    vergleich();
+    //vergleich();
+    
+    ifVergleich();
     return 0;
   
 }
