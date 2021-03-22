@@ -3,7 +3,7 @@
 //  Info II - Vorlesung
 //
 //  Created by Paul Hackenberg on 20.03.21.
-//
+// Einzelene Aufgaben aus der Informatik II - Vorlesung an der Ostfalia in Wolfsburg
 
 #include <stdio.h>
 
@@ -59,6 +59,10 @@ void ifKomplex(){
     scanf("%f", &fZahl_2);
     scanf("%f", &fZahl_3);
     
+    if(fZahl_1 == fZahl_2 && fZahl_1 == fZahl_3 && fZahl_2 == fZahl_3){
+        printf("Alle Zahlen sind gleich gross \n");
+    }
+    
     if(fZahl_1 > fZahl_2 && fZahl_1 > fZahl_3){
         printf("%f ist die größte Zahl /n", fZahl_1);
     }
@@ -69,8 +73,10 @@ void ifKomplex(){
         printf("%f ist die größte Zahl \n", fZahl_3);
     }
     
+}
 
-    
+void switchCase(){
+        
 }
 
 int main(int argc, const char * argv[]) {
@@ -78,7 +84,8 @@ int main(int argc, const char * argv[]) {
     //vergleich();
     //ifVergleich();
     //elseIf();
-    ifKomplex();
+    //ifKomplex();
+    switchCase();
     
     
     return 0;
