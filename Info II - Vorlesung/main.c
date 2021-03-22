@@ -34,11 +34,24 @@ void ifVergleich(){
     
 }
 
+void elseIf(){
+    float zahl_1 = 0;
+    printf("Bitte geben Sie eine Zahle ein: \n");
+    scanf("%f", &zahl_1);
+    if(zahl_1 == 6){
+        printf("%f ist == 6 \n", zahl_1);
+    }else if(zahl_1 > 6){
+        printf("%f ist größer als 6 \n", zahl_1);
+        
+    }
+}
+
 
 int main(int argc, const char * argv[]) {
     
     //vergleich();
     //ifVergleich();
+    elseIf();
     
     
     return 0;
