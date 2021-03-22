@@ -110,17 +110,28 @@ void switchCase(){
 
 void forSchleife(){
     //Fibonaci-Folge
-    int f = 1;
-    
-    printf("Einzel Werte: \n");
+    int f1 = 1;
+    int f2;
+    int f0 = 0;
+    printf("Einzel Werte der Fibonaci-Folge mit 10 Durchläufen: \n");
     for(int i = 0; i < 11; i++){
-        f = ((f-1) + (f-2));
-        printf("%d \n", f);
+        f2 = f1 + f0;
+        
+        f0 = f1;
+        i++;
+        printf("%d \n", i);
     }
-    printf("- - - - - - - - - - - - -  \n");
-    printf("Ergebnis: \n");
-    printf("%d \n", f);
     
+}
+
+void whileSchleife(){
+    int i = 1;
+    int e = 0;
+    while(i < 11){
+        e += i;
+        i++;
+        printf("%d \n", e);
+    }
 }
 
 int main(int argc, const char * argv[]) {
@@ -130,7 +141,8 @@ int main(int argc, const char * argv[]) {
     //elseIf();
     //ifKomplex();
     //switchCase();
-    forSchleife();
+    //forSchleife();
+    whileSchleife();
     
     
     return 0;
