@@ -20,37 +20,35 @@ void vergleich(){
 }
 
 void ifVergleich(){
-    float zahl_1 = 0;
+    float fZahl_1 = 0;
     printf("Bitte geben Sie eine Zahle ein: \n");
-    scanf("%f", &zahl_1);
+    scanf("%f", &fZahl_1);
     
     
-    if(zahl_1 > 5){
+    if(fZahl_1 > 5){
         
-        printf("%f ist größer als 5 \n", zahl_1);
+        printf("%f ist größer als 5 \n", fZahl_1);
     }else{
-        printf("%f ist kleiner als 5 \n", zahl_1);
+        printf("%f ist kleiner als 5 \n", fZahl_1);
     }
     
 }
 
 void elseIf(){
-    float zahl_1 = 0;
-    while(zahl_1 != -88){
+    float fZahl_1 = 0;
+    while(fZahl_1 != -88){
         printf("\n");
         printf("Bitte geben Sie eine Zahle ein: (-88 beendet das Program)\n");
-        scanf("%f", &zahl_1);
-        if(zahl_1 == 0){
-            printf("%f ist == 0 \n", zahl_1);
-        }else if(zahl_1 > 0){
-            printf("%f ist größer als 0 \n", zahl_1);
+        scanf("%f", &fZahl_1);
+        if(fZahl_1 == 0){
+            printf("%f ist == 0 \n", fZahl_1);
+        }else if(fZahl_1 > 0){
+            printf("%f ist größer als 0 \n", fZahl_1);
             
-        }else if (zahl_1 < 0){
-            printf("%f ist kleiner als 0 \n", zahl_1);
+        }else if (fZahl_1 < 0){
+            printf("%f ist kleiner als 0 \n", fZahl_1);
         }
-        
     }
-    
 }
 
 
