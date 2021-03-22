@@ -134,6 +134,27 @@ void whileSchleife(){
     }
 }
 
+float fakultät(float fZahl_1){
+    if(fZahl_1 > 1) {
+        return fZahl_1 * fakultät(fZahl_1-1);
+    }else {
+        return 1;
+    }
+   
+  
+}
+
+void funktionen(){
+    float fZahl_1;
+    
+    printf("Bitte geben Sie eine Zahl zur Berechnung der Fakultät an: \n");
+    scanf("%f", &fZahl_1);
+    printf("Ergebnis: %f", fakultät(fZahl_1));
+    
+}
+
+
+
 int main(int argc, const char * argv[]) {
     
     //vergleich();
@@ -143,7 +164,7 @@ int main(int argc, const char * argv[]) {
     //switchCase();
     //forSchleife();
     //whileSchleife();
-    
+    funktionen();
     
     
     return 0;
