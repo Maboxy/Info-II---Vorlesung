@@ -38,8 +38,9 @@ void ifVergleich(){
 int main(int argc, const char * argv[]) {
     
     //vergleich();
+    //ifVergleich();
     
-    ifVergleich();
+    
     return 0;
   
 }
