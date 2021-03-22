@@ -31,7 +31,6 @@ void ifVergleich(){
     }else{
         printf("%f ist kleiner als 5 \n", fZahl_1);
     }
-    
 }
 
 void elseIf(){
@@ -135,6 +134,7 @@ void whileSchleife(){
 
 //fakultät(); gehört mit zur funktionen() Funktion zu Veranschaulichung des Funktionsprinzipes von einzelnen Methoden/Funktionen
 float fakultät(float fZahl_1){
+    //Satt Rekursion wurde in der Vorlesung eine for-Schleife verwendet worden
     if(fZahl_1 > 1) {
         return fZahl_1 * fakultät(fZahl_1-1);
     }else {
