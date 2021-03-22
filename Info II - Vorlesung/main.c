@@ -23,7 +23,7 @@ void ifVergleich(){
     float zahl_1 = 0;
     printf("Bitte geben Sie eine Zahle ein: \n");
     scanf("%f", &zahl_1);
-   
+    
     
     if(zahl_1 > 5){
         
@@ -36,14 +36,21 @@ void ifVergleich(){
 
 void elseIf(){
     float zahl_1 = 0;
-    printf("Bitte geben Sie eine Zahle ein: \n");
-    scanf("%f", &zahl_1);
-    if(zahl_1 == 6){
-        printf("%f ist == 6 \n", zahl_1);
-    }else if(zahl_1 > 6){
-        printf("%f ist größer als 6 \n", zahl_1);
+    while(zahl_1 != -88){
+        printf("\n");
+        printf("Bitte geben Sie eine Zahle ein: (-88 beendet das Program)\n");
+        scanf("%f", &zahl_1);
+        if(zahl_1 == 0){
+            printf("%f ist == 0 \n", zahl_1);
+        }else if(zahl_1 > 0){
+            printf("%f ist größer als 0 \n", zahl_1);
+            
+        }else if (zahl_1 < 0){
+            printf("%f ist kleiner als 0 \n", zahl_1);
+        }
         
     }
+    
 }
 
 
@@ -55,7 +62,7 @@ int main(int argc, const char * argv[]) {
     
     
     return 0;
-  
+    
 }
 
 
