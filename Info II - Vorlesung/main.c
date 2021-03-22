@@ -72,12 +72,11 @@ void ifKomplex(){
     if(fZahl_3 > fZahl_1 && fZahl_3 > fZahl_2){
         printf("%f ist die größte Zahl \n", fZahl_3);
     }
-    
 }
 
 void switchCase(){
     char cSymbol;
-    printf("Bitte geben Sie einen Rechenoperator ein: \n");
+    printf("Bitte geben Sie einen Rechenoperator ein ( + , - , * , / , : ): \n");
     scanf("%c", &cSymbol);
     float fZahl_1 = 0;
     float fZahl_2 = 0;
@@ -102,8 +101,26 @@ void switchCase(){
             ergebnis = fZahl_1 / fZahl_2;
             printf("Ergebnis ist = %f /n", ergebnis);
             break;
-            
+        case ':':
+            ergebnis = fZahl_1 / fZahl_2;
+            printf("Ergebnis ist = %f /n", ergebnis);
+            break;
     }
+}
+
+void forSchleife(){
+    //Fibonaci-Folge
+    int f = 1;
+    
+    printf("Einzel Werte: \n");
+    for(int i = 0; i < 11; i++){
+        f = ((f-1) + (f-2));
+        printf("%d \n", f);
+    }
+    printf("- - - - - - - - - - - - -  \n");
+    printf("Ergebnis: \n");
+    printf("%d \n", f);
+    
 }
 
 int main(int argc, const char * argv[]) {
@@ -112,7 +129,8 @@ int main(int argc, const char * argv[]) {
     //ifVergleich();
     //elseIf();
     //ifKomplex();
-    switchCase();
+    //switchCase();
+    forSchleife();
     
     
     return 0;
