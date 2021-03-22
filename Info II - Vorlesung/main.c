@@ -142,7 +142,8 @@ int main(int argc, const char * argv[]) {
     //ifKomplex();
     //switchCase();
     //forSchleife();
-    whileSchleife();
+    //whileSchleife();
+    
     
     
     return 0;
