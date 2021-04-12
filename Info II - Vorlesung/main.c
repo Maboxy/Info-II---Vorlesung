@@ -149,7 +149,15 @@ void funktionen(){
     printf("Ergebnis: %f \n", fakultät(fZahl_1));
 }
 
-
+void str_anhängen(char *u, char*v){
+    while(*u){
+        u++;
+    }
+    while(*u = *v){
+        u++;
+        v++;
+    }
+}
 
 int main(int argc, const char * argv[]) {
     
@@ -160,7 +168,11 @@ int main(int argc, const char * argv[]) {
     //switchCase();
     //forSchleife();
     //whileSchleife();
-    funktionen();
+    //funktionen();
+    char c1[80] = "Hallo ";
+    char c2[80] = "Paul";
+    str_anhängen(c1, c2);
+    printf("%s \n", c1);
     
     return 0;
 }
