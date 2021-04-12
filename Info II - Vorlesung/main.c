@@ -153,7 +153,7 @@ void str_anhängen(char *u, char*v){
     while(*u){
         u++;
     }
-    while(*u = *v){
+    while(*u = *v){ //*u = *v darf kein Vergleichsein, solange etwas von V in U "getan" werden kann läuft die Schleife weiter
         u++;
         v++;
     }
@@ -181,7 +181,6 @@ void mehrdimensionaleFelder(){
             printf("%d \n", iLösung[i][j]);
         }
     }
-    
     
 }
 
