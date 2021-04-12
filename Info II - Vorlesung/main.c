@@ -159,6 +159,32 @@ void str_anhängen(char *u, char*v){
     }
 }
 
+void mehrdimensionaleFelder(){
+    int iArray[2][2] = {
+        { 1, 2},
+        { 3, 4}};
+    
+    int iArray2[2][2] = {
+        { 2, 4},
+        { 1, 3}};
+    
+    int iLösung[2][2];
+    
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++ ){
+            iLösung[i][j] = iArray[i][0] * iArray2[0][j] + iArray[i][1] * iArray2[1][j];
+        }
+    }
+    
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++ ){
+            printf("%d \n", iLösung[i][j]);
+        }
+    }
+    
+    
+}
+
 int main(int argc, const char * argv[]) {
     
     //vergleich();
@@ -169,10 +195,13 @@ int main(int argc, const char * argv[]) {
     //forSchleife();
     //whileSchleife();
     //funktionen();
-    char c1[80] = "Hallo ";
-    char c2[80] = "Paul";
-    str_anhängen(c1, c2);
-    printf("%s \n", c1);
+            //    char c1[80] = "Hallo ";
+            //    char c2[80] = "Paul";
+            //    str_anhängen(c1, c2);
+            //    printf("%s \n", c1);
+    mehrdimensionaleFelder();
+    
+    
     
     return 0;
 }
