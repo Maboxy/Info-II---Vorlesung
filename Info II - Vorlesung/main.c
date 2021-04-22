@@ -184,6 +184,56 @@ void mehrdimensionaleFelder(){
     
 }
 
+int charkomisch(){
+    char cCach = 'A';
+    int iCount = 0;
+    while(cCach != '+'){
+        cCach = getchar();
+        putchar(cCach);
+        iCount++;
+        //printf("%c", cCach);
+    }
+    printf("%d \n", iCount/2);
+    
+    return 0;
+    
+}
+
+int dateiopen(){
+    FILE *datei;
+    int messdaten[30][3];
+    int i, j;
+    datei = fopen("/Users/paul/OneDrive/Uni-GoodNotes/2. Semester/Informatik II/C - Programme/Info II - Vorlesung/Info II - Vorlesung/Messdaten.txt", "r"); //Bei Apple muss der genaue Dateipfad angegeben werden
+    if (datei == NULL) {
+        fprintf(stderr, "Fehler bei Oeffnen der Datei!\n");
+        return -1;
+    }
+    
+    for (i = 0; i < 30; i++) {
+        for (j = 0; j < 3; j++) {
+            fscanf(datei, "%d", &(messdaten[i][j]));
+        }
+        fscanf(datei, "\n");
+    }
+    for (i = 0; i < 30; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%6d ", messdaten[i][j]);
+        }
+        printf("\n");
+    }
+    if (fclose(datei)==EOF){
+        fprintf(stderr,"Datei konnte nicht geschlossen werde!\n");
+        return -2;
+    }
+    for (i = 0; i < 30; i++) {
+    for (j = 0; j < 3; j++) {
+    fscanf(datei, "%d", messdaten[i]+j);
+    }
+    fscanf(datei, "\n");
+    }
+    
+    return 0;
+}
 int main(int argc, const char * argv[]) {
     
     //vergleich();
@@ -194,11 +244,14 @@ int main(int argc, const char * argv[]) {
     //forSchleife();
     //whileSchleife();
     //funktionen();
-            //    char c1[80] = "Hallo ";
-            //    char c2[80] = "Paul";
-            //    str_anhängen(c1, c2);
-            //    printf("%s \n", c1);
-    mehrdimensionaleFelder();
+    //    char c1[80] = "Hallo ";
+    //    char c2[80] = "Paul";
+    //    str_anhängen(c1, c2);
+    //    printf("%s \n", c1);
+    //mehrdimensionaleFelder();
+    //charkomisch();
+    dateiopen();
+    
     
     
     

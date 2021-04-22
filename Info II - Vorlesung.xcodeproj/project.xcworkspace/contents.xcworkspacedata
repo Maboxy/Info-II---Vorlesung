@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/paul/OneDrive/Uni-GoodNotes/2. Semester/Informatik II/C - Programme/Info II - Vorlesung/Info II - Vorlesung/Messdaten.txt">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

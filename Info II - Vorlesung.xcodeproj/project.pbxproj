@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA957E22262D668D00D2F764 /* Messdaten.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Messdaten.txt; path = "/Users/paul/OneDrive/Uni-GoodNotes/2. Semester/Informatik II/C - Programme/Info II - Vorlesung/Info II - Vorlesung/Messdaten.txt"; sourceTree = "<absolute>"; };
 		DADD855B26067E5E00473CC0 /* Info II - Vorlesung */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Info II - Vorlesung"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADD855E26067E5E00473CC0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +58,7 @@
 		DADD855D26067E5E00473CC0 /* Info II - Vorlesung */ = {
 			isa = PBXGroup;
 			children = (
+				DA957E22262D668D00D2F764 /* Messdaten.txt */,
 				DADD855E26067E5E00473CC0 /* main.c */,
 			);
 			path = "Info II - Vorlesung";
