@@ -6,6 +6,7 @@
 // Einzelene Aufgaben aus der Informatik II - Vorlesung an der Ostfalia in Wolfsburg
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void vergleich(){
     float a = 0;
@@ -234,6 +235,23 @@ int dateiopen(){
     
     return 0;
 }
+
+int dynamischerSpeicher(){
+    int iANzahlElemente;
+    printf("Wie viele Messwerte möchten Sie einlesen?\n");
+    scanf("%d", &iANzahlElemente);
+    
+    double *heapSpeicherPtr = malloc(sizeof(double)*iANzahlElemente);
+    
+    if(heapSpeicherPtr == NULL){ //nicht 0, sonder es steht wirklich nix drin also NULL
+        printf("Es gibt nicht genügend Speicher!!! \n");
+        return 1;       //Bricht das Programm ab
+    }
+    
+    
+    
+    return 0;
+}
 int main(int argc, const char * argv[]) {
     
     //vergleich();
@@ -250,10 +268,18 @@ int main(int argc, const char * argv[]) {
     //    printf("%s \n", c1);
     //mehrdimensionaleFelder();
     //charkomisch();
-    dateiopen();
+    //dateiopen();
+   // dynamischerSpeicher();
+    int i = 32;
+    while(i < 64){
+    printf("%d\n", i);
+    i +=4;
+    }
     
-    
-    
+    for (int i=32; i<64; i+=2){
+        printf("%d\n", i);
+        i+=2;
+    }
     
     return 0;
 }
