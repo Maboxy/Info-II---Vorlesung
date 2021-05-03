@@ -5,8 +5,9 @@
 //  Created by Paul Hackenberg on 20.03.21.
 // Einzelene Aufgaben aus der Informatik II - Vorlesung an der Ostfalia in Wolfsburg
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void vergleich(){
     float a = 0;
@@ -252,6 +253,144 @@ int dynamischerSpeicher(){
     
     return 0;
 }
+
+    // Deklaration eigener Strukturen
+    struct _messdaten;
+    struct _messdaten {
+    struct _messdaten *next;
+    char sensorname[10];
+    float messwert;
+    };
+    typedef struct _messdaten messdaten;
+    
+    // Deklaration eigener Routinen
+    int messwert_hinzufuegen(char *, float);
+    messdaten * sensor_suchen(char *);
+    int sensormessdatum_loeschen(char *);
+    void messdaten_ausgeben(void);
+    // Initialisierung der verketteten Liste
+    messdaten *start_pointer = NULL;
+    
+    
+    
+
+
+int listeMain(){
+    // Variablendeklaration
+    int i; // Schleifenvariable
+    int anzahl; // Anzahl der Messdaten
+    char name[10]; // Sensorbezeichnung
+    float messung; // Messwert
+    messdaten * ptr;
+    messdaten * ptr_2;
+    // Anzahl Messdaten eingeben
+    printf("\nWie viele Messdaten wollen Sie eingeben? ");
+    scanf ("%d", &anzahl);
+    // Eingabe der Sensordaten
+    for (i = 1; i <= anzahl; i++) {
+    printf("\nGeben Sie den Namen des Sensors %d ein: ", i);
+    scanf("%s", name);
+    printf("Geben Sie den Messwert ein: ");
+    scanf("%f", &messung);
+    // Messwert in Liste eintragen
+    if (messwert_hinzufuegen(name, messung) != 0) {
+    printf("\nFehler beim Hinzufuegen eines Elements!\n");
+    return -1;
+    }
+    }
+    
+    // Ausgabe der kompletten Liste
+    messdaten_ausgeben();
+    // Sensor suchen
+    printf("\n\nWelchen Sensor wollen Sie suchen? ");
+    scanf("%s", name);
+    if ((ptr = sensor_suchen (name)) == NULL)
+    printf("\nSensor mit Namen %s ist nicht vorhanden!", name);
+    else
+    printf("\nDer Sensor %s hat den Messwert %6.3f m.\n",
+    ptr->sensorname, ptr->messwert);
+    
+    // Sensoreintrag loeschen
+    printf("\n\nWelchen Eintrag wollen Sie loeschen? ");
+    scanf("%s", name);
+    if (sensormessdatum_loeschen(name) != 0) {
+    printf("\nFehler beim Loeschen!\n");
+    return 1;
+    }
+    // Ausgabe der geaenderten Liste
+    messdaten_ausgeben();
+    
+    // Liste loeschen
+    ptr = start_pointer;
+    // Speicher wieder freigeben
+    while (ptr != NULL) {
+    ptr_2 = ptr->next;
+    free(ptr);
+    ptr = ptr_2;
+    }
+    // Programm ohne Fehler beenden
+    return 0;
+    }
+
+
+// Neues Element an den Anfang der Liste einfuegen
+int messwert_hinzufuegen(char * name, float messwert) {
+messdaten * ptr;
+if ((ptr = (messdaten *)malloc(sizeof(messdaten))) == NULL) {
+return -1;
+}
+else {
+strcpy(ptr->sensorname, name);
+ptr->messwert = messwert;
+ptr->next = start_pointer;
+start_pointer = ptr;
+return 0;
+}
+}
+
+// Sensor in der Liste suchen
+messdaten* sensor_suchen(char * name) {
+messdaten *ptr = start_pointer;
+while((ptr != NULL) && (strcmp(ptr->sensorname, name))) {
+// Weitersuchen
+ptr = ptr->next;
+}
+// Pointer auf das gesuchte Element wird zurueckgegeben
+return ptr;
+}
+
+// Sesormessdatum aus der Liste loeschen
+int sensormessdatum_loeschen(char * name) {
+messdaten *ptr = start_pointer, *vorgaenger;
+// Sensor suchen
+while ((ptr != NULL) && strcmp(ptr->sensorname, name)) {
+vorgaenger = ptr;
+ptr = ptr->next;
+}
+if (ptr == NULL)
+return 1; // Sensor nicht gefunden
+else {
+    // Sensor ist der erste Eintrag
+    if(ptr == start_pointer)
+    start_pointer = ptr->next;
+    else
+    vorgaenger->next = ptr->next;
+    // Speicher freigeben
+    free(ptr);
+    // Sesormessdatum erfolgreich geloescht
+    return 0;
+    }
+    }
+// Ausgabe der verketteten Liste Messdaten
+void messdaten_ausgeben(void) {
+messdaten * ptr = start_pointer;
+while (ptr != NULL) {
+printf("Der Sensor %s hat den Messwert: %6.3f\n",
+ptr->sensorname, ptr->messwert);
+ptr = ptr->next;
+}
+}
+
 int main(int argc, const char * argv[]) {
     
     //vergleich();
@@ -270,16 +409,8 @@ int main(int argc, const char * argv[]) {
     //charkomisch();
     //dateiopen();
    // dynamischerSpeicher();
-    int i = 32;
-    while(i < 64){
-    printf("%d\n", i);
-    i +=4;
-    }
-    
-    for (int i=32; i<64; i+=2){
-        printf("%d\n", i);
-        i+=2;
-    }
+    listeMain();
+
     
     return 0;
 }
