@@ -254,7 +254,15 @@ int dynamischerSpeicher(){
     return 0;
 }
 
-    // Deklaration eigener Strukturen
+    
+
+/*
+ -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+ Ab hier, LISTE:
+ -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+ */
+
+// Deklaration eigener Strukturen
     struct _messdaten;
     struct _messdaten {
     struct _messdaten *next;
@@ -270,10 +278,6 @@ int dynamischerSpeicher(){
     void messdaten_ausgeben(void);
     // Initialisierung der verketteten Liste
     messdaten *start_pointer = NULL;
-    
-    
-    
-
 
 int listeMain(){
     // Variablendeklaration
